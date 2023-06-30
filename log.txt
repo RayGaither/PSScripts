@@ -1,0 +1,42 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20230630141649
+Username: HI\Argaither
+RunAs User: HI\Argaither
+Machine: EXPSQL25 (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 9012
+PSVersion: 5.1.14393.5582
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.5582
+BuildVersion: 10.0.14393.5582
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\argaither\repos\PSScripts\log.txt
+Test-Connection : Testing connection to computer 'aclaranetermateprdsqlsrv' failed: No such host is known
+At line:3 char:76
++ ... aither\repos\PSScripts\ServerList.txt) | ForEach {Test-Connection $_}
++                                                       ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (aclaranetermateprdsqlsrv:String) [Test-Connection], PingException
+    + FullyQualifiedErrorId : TestConnectionException,Microsoft.PowerShell.Commands.TestConnectionCommand
+Test-Connection : Testing connection to computer 'aclaranetermateprdsqlsrv' failed: No such host is known
+At line:3 char:76
++ ... aither\repos\PSScripts\ServerList.txt) | ForEach {Test-Connection $_}
++                                                       ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (aclaranetermateprdsqlsrv:String) [Test-Connection], PingException
+    + FullyQualifiedErrorId : TestConnectionException,Microsoft.PowerShell.Commands.TestConnectionCommand
+
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\argaither> 
+Start-Transcript -Path C:\Users\argaither\repos\PSScripts\log.txt
+(Get-Content C:\Users\argaither\repos\PSScripts\ServerList.txt) | ForEach {Test-Connection $_}
+Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20230630141727
+**********************
