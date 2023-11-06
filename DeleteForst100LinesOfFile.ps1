@@ -1,0 +1,1 @@
+﻿Get-Content "C:\SSMA_XML\KC_report.xml" | select -First 100 | Out-File "C:\kc100.xml"
