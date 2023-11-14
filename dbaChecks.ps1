@@ -5,11 +5,18 @@
 # Import-Module Pester -Force -RequiredVersion 4.10.0
 
 
+Get-DbcCheck | Out-GridView
+
+
+$instance = 'GAROHSQL01'
+get-dbafeature
+Test-Connection $instance
+
 Get-DbcConfig
 
-Invoke-DbcCheck bambam
+Invoke-DbcCheck $instance
 
-Invoke-DbcCheck -SqlInstance sqlprod01 -Checks SuspectPage, LastBackup
+Invoke-DbcCheck -SqlInstance $instance -Checks SuspectPage, LastBackup
 
 ####################### try it ##############################################
 
@@ -22,3 +29,6 @@ Get-DbcConfig
 
 # Invoke a few tests
 Invoke-DbcCheck -Checks SuspectPage, LastBackup
+
+
+C:\Program Files\WindowsPowerShell\Modules\dbachecks\2.0.18\checks\Database.Tests.ps1: line 515
