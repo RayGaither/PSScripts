@@ -1,5 +1,9 @@
 ﻿Get-ExecutionPolicy
 
+Get-PSRepository
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+Find-Module dbatools
+Install-Module dbatools
  Find-Module -Name dbccheck
  Find-Module -Name Pester
 
@@ -25,16 +29,18 @@ Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
 
 
-Install-Module Pester -SkipPublisherCheck -Force -RequiredVersion 4.10.0
+Install-Module Pester -SkipPublisherCheck -Force -RequiredVersion 4.10.1
 
-Import-Module Pester -Force -RequiredVersion 4.10.0
+Find-Module PSFramework
+
+Install-Module PSFramework -RequiredVersion 1.1.59
 
 Install-Module -Name dbachecks -RequiredVersion 2.0.18
 
+Update-Module dbachecks
+Update-Module dbatools
 
 
-# To run from cmd line
-$instance = 'EXPSQL25'
-Invoke-DbcCheck -SqlInstance $instance -Checks SuspectPage, LastBackup
+Find-DbaCommand | Out-GridView
 
-Invoke-DbcCheck -SqlInstance $instance -Checks SuspectPage, LastBackup
+
